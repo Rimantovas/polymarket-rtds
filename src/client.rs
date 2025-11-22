@@ -79,7 +79,7 @@ impl RealTimeDataClient {
                                     "action": "subscribe",
                                     "subscriptions": msg.subscriptions,
                                 });
-                                if write.send(WsMessage::Text(payload.to_string())).await.is_err() {
+                                if write.send(WsMessage::Text(payload.to_string().into())).await.is_err() {
                                     eprintln!("Failed to send subscribe message");
                                     break;
                                 }
@@ -89,7 +89,7 @@ impl RealTimeDataClient {
                                     "action": "unsubscribe",
                                     "subscriptions": msg.subscriptions,
                                 });
-                                if write.send(WsMessage::Text(payload.to_string())).await.is_err() {
+                                if write.send(WsMessage::Text(payload.to_string().into())).await.is_err() {
                                     eprintln!("Failed to send unsubscribe message");
                                     break;
                                 }
@@ -101,7 +101,7 @@ impl RealTimeDataClient {
                         }
                     }
                     _ = ping_interval_timer.tick() => {
-                        if write.send(WsMessage::Text("ping".to_string())).await.is_err() {
+                        if write.send(WsMessage::Text("ping".to_string().into())).await.is_err() {
                             eprintln!("Failed to send ping");
                             break;
                         }

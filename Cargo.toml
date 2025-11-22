@@ -2,10 +2,16 @@
 name = "polymarket-rtds"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "A Rust client for Polymarket's Real-Time Data Streaming WebSocket service"
+homepage = "https://github.com/Rimantovas/polymarket-rtds"
+repository = "https://github.com/Rimantovas/polymarket-rtds"
+readme = "README.md"
+keywords = ["polymarket", "websocket"]
 
 [dependencies]
 tokio = { version = "1.41", features = ["rt-multi-thread", "macros", "time", "sync"] }
-tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+tokio-tungstenite = { version = "0.28", features = ["native-tls"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 futures-util = "0.3"
