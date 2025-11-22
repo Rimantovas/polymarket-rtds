@@ -1,0 +1,9 @@
+{
+  "name": "polymarket-rtds-version-tracker",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Dummy package.json to track upstream TypeScript SDK version via Dependabot",
+  "dependencies": {
+    "@polymarket/real-time-data-streaming": "1.4.2"
+  }
+}
