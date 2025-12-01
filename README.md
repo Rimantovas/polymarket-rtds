@@ -13,6 +13,15 @@ Add this to your `Cargo.toml`:
 polymarket-rtds = "0.1.0"
 ```
 
+### TLS features
+
+The crate defaults to `native-tls`, but you can pick any TLS backend supported by `tokio-tungstenite` via features: `native-tls`, `native-tls-vendored`, `rustls-tls-native-roots`, `rustls-tls-webpki-roots`. Disable default features to opt into a different backend, e.g.:
+
+```toml
+[dependencies]
+polymarket-rtds = { version = "0.1.0", default-features = false, features = ["rustls-tls-webpki-roots"] }
+```
+
 ## Quick Start
 
 Here's a quick example of how to connect to the service and start receiving messages:
